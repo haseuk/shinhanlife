@@ -1,0 +1,276 @@
+.coll {
+  border-collapse: collapse;
+}
+/*--------------------------------------------------------------------------------------------------------------
+*  Template
+*--------------------------------------------------------------------------------------------------------------*/
+a {
+  display: inline-block;
+  cursor: pointer;
+}
+img {
+  image-rendering: auto;
+  backface-visibility: visible;
+  display: inline-block;
+}
+.container .wrap {
+  font-size: 0vw;
+  text-align: center;
+  overflow: hidden;
+}
+.container .wrap .visual {
+  width: 100vw;
+  height: 176.11111111vw;
+  background-repeat: no-repeat;
+  background-image: url('../img2/bg1.png');
+  background-size: contain;
+}
+.container .wrap .visual .v-inner .t1 {
+  width: 40.13888889vw;
+  height: 8.61111111vw;
+}
+.container .wrap .visual .v-inner .t2 {
+  width: 84.86111111vw;
+  height: 16.66666667vw;
+  margin-top: 3.47222222vw;
+}
+.container .wrap .visual .v-inner .t3 {
+  width: 73.88888889vw;
+  height: 9.86111111vw;
+  margin-top: 5.83333333vw;
+}
+.container .wrap .visual .tit-wrap {
+  position: relative;
+}
+.container .wrap .visual .tit-wrap img {
+  opacity: 1;
+  transition: opacity 1s, transform 1s;
+}
+.container .wrap .visual .tit-wrap .sub {
+  width: 18.88888889vw;
+  height: 10.41666667vw;
+  position: absolute;
+  left: 55.55555556vw;
+  top: 21.11111111vw;
+  right: auto;
+  bottom: auto;
+}
+.container .wrap .visual .tit-wrap .vis1 {
+  width: 52.36111111vw;
+  height: 19.72222222vw;
+  position: absolute;
+  left: 24.02777778vw;
+  top: 29.44444444vw;
+  right: auto;
+  bottom: auto;
+  transition-delay: 0.8s;
+}
+.container .wrap .visual .tit-wrap .vis2 {
+  width: 37.63888889vw;
+  height: 15vw;
+  position: absolute;
+  left: 33.19444444vw;
+  top: 49.58333333vw;
+  right: auto;
+  bottom: auto;
+  transition-delay: 1.3s;
+}
+.container .wrap .visual .tit-wrap .vis3 {
+  width: 66.25vw;
+  height: 5.69444444vw;
+  position: absolute;
+  left: 16.94444444vw;
+  top: 87.22222222vw;
+  right: auto;
+  bottom: auto;
+  transition-delay: 1.8s;
+}
+.container .wrap .visual .obj {
+  position: relative;
+}
+.container .wrap .visual .obj .shape1 {
+  position: absolute;
+  left: 21.94444444vw;
+  top: 19.44444444vw;
+  right: auto;
+  bottom: auto;
+  transform: rotate(45deg);
+}
+.container .wrap .visual .obj .shape2 {
+  position: absolute;
+  left: 34.02777778vw;
+  top: 19.44444444vw;
+  right: auto;
+  bottom: auto;
+}
+.container .wrap .visual .obj .shape3 {
+  position: absolute;
+  left: 43.05555556vw;
+  top: 12.22222222vw;
+  right: auto;
+  bottom: auto;
+}
+.container .wrap .visual .obj .shape4 {
+  position: absolute;
+  left: 51.11111111vw;
+  top: 16.25vw;
+  right: auto;
+  bottom: auto;
+}
+.container .wrap .visual .obj .shape5 {
+  position: absolute;
+  left: 78.88888889vw;
+  top: 19.44444444vw;
+  right: auto;
+  bottom: auto;
+}
+.container .wrap .visual .obj .shape6 {
+  position: absolute;
+  left: 81.52777778vw;
+  top: 29.86111111vw;
+  right: auto;
+  bottom: auto;
+  transform: rotate(45deg);
+}
+.container .wrap .visual .obj .shape7 {
+  position: absolute;
+  left: 79.16666667vw;
+  top: 52.36111111vw;
+  right: auto;
+  bottom: auto;
+}
+.container .wrap .visual .obj .shape8 {
+  position: absolute;
+  left: 18.33333333vw;
+  top: 55.97222222vw;
+  right: auto;
+  bottom: auto;
+}
+.container .wrap .visual .obj .shape9 {
+  position: absolute;
+  left: 16.94444444vw;
+  top: 74.30555556vw;
+  right: auto;
+  bottom: auto;
+}
+.container .wrap .visual .obj .shape10 {
+  position: absolute;
+  left: 20.83333333vw;
+  top: 66.66666667vw;
+  right: auto;
+  bottom: auto;
+  transform: rotate(45deg);
+}
+.container .wrap .visual .obj .shape11 {
+  position: absolute;
+  left: 29.72222222vw;
+  top: 69.86111111vw;
+  right: auto;
+  bottom: auto;
+}
+.container .wrap .visual .obj .shape12 {
+  position: absolute;
+  left: 43.33333333vw;
+  top: 67.22222222vw;
+  right: auto;
+  bottom: auto;
+  transform: rotate(90deg);
+}
+.container .wrap .visual .obj .shape13 {
+  position: absolute;
+  left: 62.91666667vw;
+  top: 68.05555556vw;
+  right: auto;
+  bottom: auto;
+}
+.container .wrap .visual .obj .shape14 {
+  position: absolute;
+  left: 72.77777778vw;
+  top: 72.77777778vw;
+  right: auto;
+  bottom: auto;
+  transform: rotate(70deg);
+}
+.container .wrap .visual .obj .shape15 {
+  position: absolute;
+  left: 78.88888889vw;
+  top: 65.27777778vw;
+  right: auto;
+  bottom: auto;
+}
+.container .wrap .visual .obj .shape16 {
+  position: absolute;
+  left: 82.5vw;
+  top: 74.30555556vw;
+  right: auto;
+  bottom: auto;
+}
+.container .wrap .visual.ready .tit-wrap img {
+  opacity: 0;
+  transform: translateY(100%);
+}
+.container .wrap .content {
+  padding: 0vw;
+}
+.container .wrap .content .s1 {
+  width: 100vw;
+  height: 20.69444444vw;
+}
+.container .wrap .content .s2 {
+  width: 100vw;
+  height: 28.47222222vw;
+}
+.container .wrap .content .s3 {
+  width: 100vw;
+  height: 20.69444444vw;
+}
+.container .wrap .content .s4 {
+  width: 100vw;
+  height: 37.08333333vw;
+}
+.container .wrap .content .s5 {
+  width: 100vw;
+  height: 16.25vw;
+}
+.container .wrap .content2 {
+  width: 100vw;
+  height: 102.77777778vw;
+  background-repeat: no-repeat;
+  background-image: url('../img2/bg2.png');
+  background-size: contain;
+}
+.container .wrap .content2 .ct1,
+.container .wrap .content2 .ct2,
+.container .wrap .content2 .ct3 {
+  width: 27.77777778vw;
+  height: 49.02777778vw;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 9.58333333vw;
+  margin-right: 2.08333333vw;
+  margin-bottom: 0vw;
+  margin-left: 0vw;
+}
+.container .wrap .content2 .ct3 {
+  margin-right: 0vw;
+}
+.container .wrap .content2 .join {
+  width: 100vw;
+  height: 22.22222222vw;
+  transition-delay: 0.3s;
+}
+.container .wrap .content2 .ct4 {
+  width: 100vw;
+  height: 21.94444444vw;
+  transition-delay: 0.3s;
+}
+.container .wrap .content2 .ct2 {
+  transition-delay: 0.5s;
+}
+.container .wrap .content2 .ct3 {
+  transition-delay: 1s;
+}
+.container .wrap footer .ft {
+  margin-top: 0vw;
+}
+/*# sourceMappingURL=style2.css.map */

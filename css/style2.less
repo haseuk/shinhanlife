@@ -1,0 +1,67 @@
+@import "asset";
+@use-vw:true;
+@vw: 720;
+
+a { .ib; .pointer; }
+img { image-rendering: auto; backface-visibility: visible; .ib; }
+
+
+.container {
+  .wrap { .fs(0); .tc; overflow: hidden;
+    .visual { .wh(720,1268); .contain('../img2/bg1.png');
+      .v-inner {
+        .t1 { .wh(289,62); }
+        .t2 { .wh(611,120); .mt(25); }
+        .t3 { .wh(532,71); .mt(42); }
+      }
+      .tit-wrap { .rel;
+        img { opacity: 1; transition: opacity 1s, transform 1s; }
+        .sub { .wh(136,75); .abs; .lt(400,152); }
+        .vis1 { .wh(377,142); .abs; .lt(173,212); transition-delay: 0.8s; }
+        .vis2 { .wh(271,108); .abs; .lt(239,357); transition-delay: 1.3s; }
+        .vis3 { .wh(477,41); .abs; .lt(122,628); transition-delay: 1.8s; }
+      }
+      .obj { .rel;
+        .shape1 { .abs; .lt(158,140); transform: rotate(45deg); }
+        .shape2 { .abs; .lt(245,140); }
+        .shape3 { .abs; .lt(310,88); }
+        .shape4 { .abs; .lt(368,117); }
+        .shape5 { .abs; .lt(568,140); }
+        .shape6 { .abs; .lt(587,215); transform: rotate(45deg); }
+        .shape7 { .abs; .lt(570,377); }
+        .shape8 { .abs; .lt(132,403); }
+        .shape9 { .abs; .lt(122,535); }
+        .shape10 { .abs; .lt(150,480); transform: rotate(45deg); }
+        .shape11 { .abs; .lt(214,503); }
+        .shape12 { .abs; .lt(312,484); transform: rotate(90deg); }
+        .shape13 { .abs; .lt(453,490); }
+        .shape14 { .abs; .lt(524,524); transform: rotate(70deg); }
+        .shape15 { .abs; .lt(568,470); }
+        .shape16 { .abs; .lt(594,535); }
+      }
+      &.ready {
+        .tit-wrap {
+          img { opacity: 0; transform: translateY(100%); }
+        }
+      }
+    }
+    .content { .p(0);
+      .s1 { .wh(720,149); }
+      .s2 { .wh(720,205); }
+      .s3 { .wh(720,149); }
+      .s4 { .wh(720,267); }
+      .s5 { .wh(720,117); }
+    }
+    .content2 { .wh(720,740); .contain('../img2/bg2.png');
+      .ct1, .ct2, .ct3 { .wh(200,353); .ib; .vat; .m(69,15,0,0); }
+      .ct3 { .mr(0); }
+      .join { .wh(720,160); transition-delay: 0.3s; }
+      .ct4 { .wh(720,158); transition-delay: 0.3s; }
+      .ct2 { transition-delay: 0.5s; }
+      .ct3 { transition-delay: 1s; }
+    }
+    footer {
+      .ft { .mt(0); }
+    }
+  }
+}

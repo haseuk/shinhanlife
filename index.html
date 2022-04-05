@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>신한라이프</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/jquery.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="wrap">
+      <div class="visual">
+        <div class="v-inner ready">
+          <h1>ShinhanLife</h1>
+          <img src="img/t1.png" class="t1" alt="신한라이프">
+          <img src="img/t2.png" class="t2" alt="놀라운3대 폴립 수술보험(무배당)">
+          <img src="img/vis-tit1.png" class="tit" alt="네?? 올해 건강검진 대상자라구요?">
+          <img src="img/stream1.png" alt="" class="stream1">
+        </div>
+      </div>
+      <div class="content">
+        <img src="img/c1.png" class="c1" alt="건강검진 전" mov>
+        <img src="img/c2.png" class="c2" alt="간편하게 가입하는 보험! 폴립이 발견돼도 걱정없이 보장!" mov data-delay="2">
+        <img src="img/c3.png" class="c3" alt="(3대기관 양성신생물 및 폴립 수술급여금)" mov data-delay="4">
+        <img src="img/c4.png" class="c4" alt="가입하고 안 하고의 놀라운 차이 지금 확인해 보세요" mov data-delay="6">
+        <div class="choice" mov data-delay="8">
+          <a class="sign-btn">가입하고 건강검진 받기</a>
+          <a class="unsigned-btn">가입 안하고 건강검진 받기</a>
+        </div>
+      </div>
+      <div class="sign">
+        <img src="img/s1.png" class="s1" alt="">
+        <img src="img/s2.png" class="s2" alt="">
+        <a class="sign-now" href="https://e.shinhanlife.co.kr/source.ids?source=1393"><img src="img/s3.png" alt="">바로가입</a>
+        <img src="img/s4.png" class="s4" alt="">
+        <div class="sparkles">
+          <img src="img/sparkle1.png" alt="" class="sparkle sparkle1">
+          <img src="img/sparkle2.png" alt="" class="sparkle sparkle2">
+          <img src="img/sparkle3.png" alt="" class="sparkle sparkle3">
+        </div>
+      </div>
+      <div class="unsigned">
+        <img src="img/u1.png" class="u1" alt="">
+        <img src="img/u2.png" class="u2" alt="">
+        <a class="sign-now" href="https://e.shinhanlife.co.kr/source.ids?source=1393"><img src="img/s3.png" alt="">바로가입</a>
+        <img src="img/s4.png" class="s4" alt="">
+        <div class="stream-box s-ready">
+          <img class="stream" src="img/stream.png" alt="">
+        </div>
+      </div>
+      <footer><img src="img/ft.png" alt=""></footer>
+    </div>
+  </div>
+  <script>
+    setTimeout(function() {
+      let tit = $('.v-inner .tit');
+      function blink(e) {
+        if (e.originalEvent.propertyName !== 'transform') return;
+        if (tit.hasClass('big')) tit.removeClass('big');
+        else tit.addClass('big');
+      }
+      tit.on('transitionend', blink);
+      setTimeout(function() {
+        tit.addClass('big');
+      },100);
+
+      $('.v-inner').removeClass('ready');
+    },500);
+
+    function sparkleMoving() {
+      $('.sparkle1').animate({'marginTop' : '0'}, 800).animate({'marginTop' : '5'}, 800, function() { sparkleMoving(); });
+      $('.sparkle2').animate({'marginTop' : '0'}, 950).animate({'marginTop' : '8'}, 950, function() { sparkleMoving(); });
+      $('.sparkle3').animate({'marginTop' : '0'}, 1000).animate({'marginTop' : '12'}, 1000, function() { sparkleMoving(); });
+    }
+    sparkleMoving();
+
+    var mov = document.querySelectorAll('[mov]');
+    function movCheck() {
+      var top = document.querySelector('.container h1').offsetHeight;
+      var bottom = window.innerHeight;
+      var i = mov.length;
+      var r;
+      while(i--) {
+        r = mov[i].getBoundingClientRect();
+        if (r.top < bottom) mov[i].setAttribute('mov', 'in')
+      }
+    }
+    window.addEventListener('scroll', movCheck);
+    window.addEventListener('resize', movCheck);
+    movCheck();
+
+    $('.sign-btn').click(function() {
+      $('.unsigned').removeClass('on');
+      $('.sign').addClass('on');
+    });
+    $('.unsigned-btn').click(function() {
+      $('.sign').removeClass('on');
+      $('.unsigned').addClass('on');
+      setTimeout(function() {
+        $('.stream-box').removeClass('s-ready');
+      },500)
+    });
+  </script>
+</body>
+</html>

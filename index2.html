@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style2.css">
+  <script src="js/jquery.min.js"></script>
+  <title>신한라이프2차</title>
+</head>
+<body>
+  <div class="container">
+    <div class="wrap">
+      <div class="visual ready">
+        <div class="v-inner">
+          <h1>ShinhanLife</h1>
+          <img src="img2/t1.png" class="t1" alt="신한라이프">
+          <img src="img2/t2.png" class="t2" alt="놀라운3대 폴립 수술보험(무배당)">
+          <img src="img2/t3.png" class="t3" alt="건강 검진 시 용종(폴립)이 발견 됐다구요? 미리 알고 준비하면 됩니다.">
+        </div>
+        <div class="tit-wrap">
+          <img src="img2/sub.png" class="sub" alt="요즘 건강">
+          <img src="img2/vis-tit1.png" class="vis1" alt="금쪽같은">
+          <img src="img2/vis-tit2.png" class="vis2" alt="내 용종">
+          <img src="img2/vis-tit3.png" class="vis3" alt="자! 여기서 솔루션 나갑니다.">
+        </div>
+        <div class="obj">
+          <img src="img2/shape2.png" class="shape1" alt="">
+          <img src="img2/shape3.png" class="shape2" alt="">
+          <img src="img2/shape1.png" class="shape3" alt="">
+          <img src="img2/shape2.png" class="shape4" alt="">
+          <img src="img2/shape1.png" class="shape5" alt="">
+          <img src="img2/shape3.png" class="shape6" alt="">
+          <img src="img2/shape2.png" class="shape7" alt="">
+          <img src="img2/shape2.png" class="shape8" alt="">
+          <img src="img2/shape2.png" class="shape9" alt="">
+          <img src="img2/shape3.png" class="shape10" alt="">
+          <img src="img2/shape2.png" class="shape11" alt="">
+          <img src="img2/shape3.png" class="shape12" alt="">
+          <img src="img2/shape1.png" class="shape13" alt="">
+          <img src="img2/shape3.png" class="shape14" alt="">
+          <img src="img2/shape1.png" class="shape15" alt="">
+          <img src="img2/shape1.png" class="shape16" alt="">
+        </div>
+      </div>
+      <div class="content">
+        <img src="img2/step1.png" class="s1" alt="첫째" mov>
+        <img src="img2/step1-txt.png" class="s2" alt="용종(폴립)은 건강 검진 시 누구에게나 흔하게 확인되므로 너무 겁먹지 마세요! 간단히 제거되거나 추가 검사를 하면 되니까요." mov data-delay="2">
+        <img src="img2/step2.png" class="s3" alt="둘째" mov data-delay="4">
+        <img src="img2/step2-txt1.png" class="s4" alt="건강 검진 전 미리 신한라이프 놀라운3대폴립수술보험에 가입하세요. 그러면 용종(폴립)이 발견되었을 때 발생하는 추가 비용에 대한 걱정이 없습니다." mov data-delay="6">
+        <img src="img2/step2-txt2.png" class="s5" alt="(3대기관 양성물 및 폴립 수술급여금)" mov data-delay="6">
+      </div>
+      <div class="content2">
+        <img src="img2/sec3-1.png" class="ct1" alt="폴립이 발견돼도 안심하고 검진" mov>
+        <img src="img2/sec3-2.png" class="ct2" alt="한번 납입으로 최대 5년간 보장 (만기 1, 3, 5년 중 선택 가능)" mov>
+        <img src="img2/sec3-3.png" class="ct3" alt="3대기관 모두 해당 10만원 지급 (3대기관) 위, 십이지장, 대장 (단, 연간 1회限)" mov>
+        <img src="img2/btn1.png" class="join" alt="가입하기" mov>
+        <img src="img2/sec3-txt.png" class="ct4" alt="* 개인별로 보험료 차이가 있을 수 있습니다. * 보다 자세한 내용은 가입페이지에서 확인하실 수 있습니다." mov>
+      </div>
+      <footer><img src="img2/ft.png" class="ft" alt="신한라이프 놀라운3대폴립수술보험(무배당) 보험료 표"></footer>
+    </div>
+  </div>
+  <script>
+    $(document).ready(function() {
+      setTimeout(function() {
+        $('.ready').removeClass('ready');
+      },500)
+    });
+    function shakeMoving() {
+      $('.shape1').animate({'marginTop' : '0'}, 100).animate({'marginTop' : '3'}, 150, function() { shakeMoving(); });
+      $('.shape2').animate({'marginLeft' : '0'}, 150).animate({'marginLeft' : '4'}, 100, function() { shakeMoving(); });
+      $('.shape3').animate({'marginTop' : '0'}, 120).animate({'marginTop' : '2'}, 200, function() { shakeMoving(); });
+      $('.shape4').animate({'marginLeft' : '0'}, 80).animate({'marginLeft' : '2'}, 200, function() { shakeMoving(); });
+      $('.shape5').animate({'marginTop' : '0'}, 120).animate({'marginTop' : '2'}, 150, function() { shakeMoving(); });
+      $('.shape6').animate({'marginLeft' : '0'}, 80).animate({'marginLeft' : '2'}, 100, function() { shakeMoving(); });
+      $('.shape7').animate({'marginLeft' : '0'}, 120).animate({'marginLeft' : '2'}, 80, function() { shakeMoving(); });
+      $('.shape8').animate({'marginTop' : '0'}, 200).animate({'marginTop' : '2'}, 200, function() { shakeMoving(); });
+      $('.shape9').animate({'marginLeft' : '0'}, 120).animate({'marginLeft' : '2'}, 200, function() { shakeMoving(); });
+      $('.shape10').animate({'marginLeft' : '0'}, 70).animate({'marginLeft' : '2'}, 150, function() { shakeMoving(); });
+      $('.shape11').animate({'marginLeft' : '0'}, 200).animate({'marginLeft' : '2'}, 100, function() { shakeMoving(); });
+      $('.shape12').animate({'marginTop' : '0'}, 120).animate({'marginTop' : '2'}, 200, function() { shakeMoving(); });
+      $('.shape13').animate({'marginLeft' : '0'}, 120).animate({'marginLeft' : '2'}, 200, function() { shakeMoving(); });
+      $('.shape14').animate({'marginTop' : '0'}, 120).animate({'marginTop' : '2'}, 200, function() { shakeMoving(); });
+      $('.shape15').animate({'marginLeft' : '0'}, 120).animate({'marginLeft' : '2'}, 100, function() { shakeMoving(); });
+      $('.shape16').animate({'marginTop' : '0'}, 120).animate({'marginTop' : '2'}, 80, function() { shakeMoving(); });
+    }
+    shakeMoving();
+    var mov = document.querySelectorAll('[mov]');
+    function movCheck() {
+      var bottom = window.innerHeight;
+      var i = mov.length;
+      var r;
+      while(i--) {
+        r = mov[i].getBoundingClientRect();
+        if (r.top < bottom) mov[i].setAttribute('mov', 'in')
+      }
+    }
+    window.addEventListener('scroll', movCheck);
+    window.addEventListener('resize', movCheck);
+    movCheck();
+  </script>
+</body>
+</html>
