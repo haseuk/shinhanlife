@@ -10,38 +10,43 @@ img { image-rendering: auto; backface-visibility: visible; .ib; }
   .wrap { .fs(0); .tc; overflow: hidden;
     .visual { .wh(720,1268); .contain('../img2/bg1.png');
       .v-inner {
+        h1 { .wh(177,30); .abs; .rt(45,42); .contain('../img2/logo.png'); }
         .t1 { .wh(289,62); }
         .t2 { .wh(611,120); .mt(25); }
         .t3 { .wh(532,71); .mt(42); }
       }
       .tit-wrap { .rel;
-        img { opacity: 1; transition: opacity 1s, transform 1s; }
+        img { opacity: 1; transition: opacity 1.2s, transform 1.2s; }
         .sub { .wh(136,75); .abs; .lt(400,152); }
         .vis1 { .wh(377,142); .abs; .lt(173,212); transition-delay: 0.8s; }
         .vis2 { .wh(271,108); .abs; .lt(239,357); transition-delay: 1.3s; }
         .vis3 { .wh(477,41); .abs; .lt(122,628); transition-delay: 1.8s; }
       }
       .obj { .rel;
-        .shape1 { .abs; .lt(158,140); transform: rotate(45deg); }
-        .shape2 { .abs; .lt(245,140); }
-        .shape3 { .abs; .lt(310,88); }
+        img { opacity: 1; transition: opacity 1s; }
+        .shape1 { .abs; .lt(158,140); transform: rotate(45deg); transition-delay: 0.2s; }
+        .shape2 { .abs; .lt(245,140); transition-delay: 0.8s; }
+        .shape3 { .abs; .lt(310,88); transition-delay: 1.0s; }
         .shape4 { .abs; .lt(368,117); }
-        .shape5 { .abs; .lt(568,140); }
-        .shape6 { .abs; .lt(587,215); transform: rotate(45deg); }
-        .shape7 { .abs; .lt(570,377); }
-        .shape8 { .abs; .lt(132,403); }
-        .shape9 { .abs; .lt(122,535); }
-        .shape10 { .abs; .lt(150,480); transform: rotate(45deg); }
-        .shape11 { .abs; .lt(214,503); }
-        .shape12 { .abs; .lt(312,484); transform: rotate(90deg); }
-        .shape13 { .abs; .lt(453,490); }
-        .shape14 { .abs; .lt(524,524); transform: rotate(70deg); }
-        .shape15 { .abs; .lt(568,470); }
-        .shape16 { .abs; .lt(594,535); }
+        .shape5 { .abs; .lt(568,140); transition-delay: 1.6s; }
+        .shape6 { .abs; .lt(587,215); transform: rotate(45deg);}
+        .shape7 { .abs; .lt(570,377); transition-delay: 1.4s; }
+        .shape8 { .abs; .lt(132,403); transition-delay: 2.2s; }
+        .shape9 { .abs; .lt(122,535); transition-delay: 1.2s; }
+        .shape10 { .abs; .lt(150,480); transform: rotate(45deg); transition-delay: 1.2s; }
+        .shape11 { .abs; .lt(214,503); transition-delay: 0.6s; }
+        .shape12 { .abs; .lt(312,484); transform: rotate(90deg);}
+        .shape13 { .abs; .lt(453,490); transition-delay: 0.8s; }
+        .shape14 { .abs; .lt(524,524); transform: rotate(70deg); transition-delay: 1.6s; }
+        .shape15 { .abs; .lt(568,470); transition-delay: 1s; }
+        .shape16 { .abs; .lt(594,535); transition-delay: 1.0s; }
       }
       &.ready {
         .tit-wrap {
           img { opacity: 0; transform: translateY(100%); }
+        }
+        .obj {
+          img { opacity: 0; }
         }
       }
     }

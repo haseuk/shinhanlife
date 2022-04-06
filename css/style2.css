@@ -25,6 +25,18 @@ img {
   background-image: url('../img2/bg1.png');
   background-size: contain;
 }
+.container .wrap .visual .v-inner h1 {
+  width: 24.58333333vw;
+  height: 4.16666667vw;
+  position: absolute;
+  right: 6.25vw;
+  top: 5.83333333vw;
+  left: auto;
+  bottom: auto;
+  background-repeat: no-repeat;
+  background-image: url('../img2/logo.png');
+  background-size: contain;
+}
 .container .wrap .visual .v-inner .t1 {
   width: 40.13888889vw;
   height: 8.61111111vw;
@@ -44,7 +56,7 @@ img {
 }
 .container .wrap .visual .tit-wrap img {
   opacity: 1;
-  transition: opacity 1s, transform 1s;
+  transition: opacity 1.2s, transform 1.2s;
 }
 .container .wrap .visual .tit-wrap .sub {
   width: 18.88888889vw;
@@ -88,6 +100,10 @@ img {
 .container .wrap .visual .obj {
   position: relative;
 }
+.container .wrap .visual .obj img {
+  opacity: 1;
+  transition: opacity 1s;
+}
 .container .wrap .visual .obj .shape1 {
   position: absolute;
   left: 21.94444444vw;
@@ -95,6 +111,7 @@ img {
   right: auto;
   bottom: auto;
   transform: rotate(45deg);
+  transition-delay: 0.2s;
 }
 .container .wrap .visual .obj .shape2 {
   position: absolute;
@@ -102,6 +119,7 @@ img {
   top: 19.44444444vw;
   right: auto;
   bottom: auto;
+  transition-delay: 0.8s;
 }
 .container .wrap .visual .obj .shape3 {
   position: absolute;
@@ -109,6 +127,7 @@ img {
   top: 12.22222222vw;
   right: auto;
   bottom: auto;
+  transition-delay: 1s;
 }
 .container .wrap .visual .obj .shape4 {
   position: absolute;
@@ -123,6 +142,7 @@ img {
   top: 19.44444444vw;
   right: auto;
   bottom: auto;
+  transition-delay: 1.6s;
 }
 .container .wrap .visual .obj .shape6 {
   position: absolute;
@@ -138,6 +158,7 @@ img {
   top: 52.36111111vw;
   right: auto;
   bottom: auto;
+  transition-delay: 1.4s;
 }
 .container .wrap .visual .obj .shape8 {
   position: absolute;
@@ -145,6 +166,7 @@ img {
   top: 55.97222222vw;
   right: auto;
   bottom: auto;
+  transition-delay: 2.2s;
 }
 .container .wrap .visual .obj .shape9 {
   position: absolute;
@@ -152,6 +174,7 @@ img {
   top: 74.30555556vw;
   right: auto;
   bottom: auto;
+  transition-delay: 1.2s;
 }
 .container .wrap .visual .obj .shape10 {
   position: absolute;
@@ -160,6 +183,7 @@ img {
   right: auto;
   bottom: auto;
   transform: rotate(45deg);
+  transition-delay: 1.2s;
 }
 .container .wrap .visual .obj .shape11 {
   position: absolute;
@@ -167,6 +191,7 @@ img {
   top: 69.86111111vw;
   right: auto;
   bottom: auto;
+  transition-delay: 0.6s;
 }
 .container .wrap .visual .obj .shape12 {
   position: absolute;
@@ -182,6 +207,7 @@ img {
   top: 68.05555556vw;
   right: auto;
   bottom: auto;
+  transition-delay: 0.8s;
 }
 .container .wrap .visual .obj .shape14 {
   position: absolute;
@@ -190,6 +216,7 @@ img {
   right: auto;
   bottom: auto;
   transform: rotate(70deg);
+  transition-delay: 1.6s;
 }
 .container .wrap .visual .obj .shape15 {
   position: absolute;
@@ -197,6 +224,7 @@ img {
   top: 65.27777778vw;
   right: auto;
   bottom: auto;
+  transition-delay: 1s;
 }
 .container .wrap .visual .obj .shape16 {
   position: absolute;
@@ -204,10 +232,14 @@ img {
   top: 74.30555556vw;
   right: auto;
   bottom: auto;
+  transition-delay: 1s;
 }
 .container .wrap .visual.ready .tit-wrap img {
   opacity: 0;
   transform: translateY(100%);
+}
+.container .wrap .visual.ready .obj img {
+  opacity: 0;
 }
 .container .wrap .content {
   padding: 0vw;
