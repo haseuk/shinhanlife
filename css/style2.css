@@ -250,7 +250,11 @@ img {
 }
 .container .wrap .content .s2 {
   width: 100vw;
-  height: 28.47222222vw;
+  height: 31.38888889vw;
+}
+.container .wrap .content .s2-1 {
+  width: 100vw;
+  height: 15.41666667vw;
 }
 .container .wrap .content .s3 {
   width: 100vw;
