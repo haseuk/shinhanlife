@@ -274,6 +274,7 @@ img {
   background-repeat: no-repeat;
   background-image: url('../img2/bg2.png');
   background-size: contain;
+  position: relative;
 }
 .container .wrap .content2 .ct1,
 .container .wrap .content2 .ct2,
@@ -305,6 +306,17 @@ img {
 }
 .container .wrap .content2 .ct3 {
   transition-delay: 1s;
+}
+.container .wrap .content2 .join-btn {
+  width: 54.58333333vw;
+  height: 14.16666667vw;
+  position: absolute;
+  left: 22.77777778vw;
+  bottom: 22.77777778vw;
+  right: auto;
+  top: auto;
+  cursor: pointer;
+  z-index: 1;
 }
 .container .wrap footer .ft {
   margin-top: 0vw;
