@@ -1,0 +1,69 @@
+@import "asset";
+@use-vw:true;
+@vw: 720;
+
+html { font-family:'OneShinhan', '원신한', 'Malgun Gothic', '맑은 고딕', 'Dotum', '돋움', 'gulim', '굴림', Helvetica, sans-serif; }
+a { .ib; .pointer; }
+img { image-rendering: auto; backface-visibility: visible; .ib; .wf; }
+
+@media screen and(min-width: 721px) {
+  .container { max-width: 720px; margin: 0 auto;
+    .wrap { .fs(0); .tc; overflow: hidden;
+      .t-img { .w(720px); .abs; .l(50%); .ml(-360px); }
+      .visual { .rel;
+        .t-img {
+          &.t1 { .t(0); }
+          &.t2 { .t(157px); }
+        }
+      }
+      .content { .rel;
+        .t-img {
+          &.btn1 { .t(0); }
+          &.t3 { .t(235px); }
+          &.t4 { .t(387px); }
+          &.p1 { .w(359px); .lt(0,451px); .ml(0); }
+          &.p2 { .w(361px); .lt(359px,451px); .ml(0); }
+        }
+        p { .fs(24px); .lh(34px); .ls(-0.025em); .w(720px); .abs; .lt(50%,858px); .ml(-360px); }
+      }
+      .noti { .p(50px,40px); .-box; .bgc(#f6f6f6); .tl;
+        ul { .mb(30px);
+          li { .fs(17px); .lh(29px); .ls(-0.05em); .light; .pl(20px); .-box; .rel;
+            p.tit { .fs(16px); .medium; .mt(30px); }
+            p.txt { .light; }
+            &.i { .pl(45px); .ib; .-box;
+              &:after { .hide; }
+            }
+            &.s:after { .hide; }
+            &:after { .cnt; .wh(6px,6px); .br(50%); .bgc(#000); .abs; .lt(0,12px); }
+            table { font-family:'OneShinhan', sans-serif; table-layout: fixed; border-collapse: collapse; .m(10px,0,10px); .ls(-0.07em); .w(610px); .-t(#b9b9b9);
+              tr { .-b(#b9b9b9);
+                th { .bgc(#e3e2e2); }
+                td { color:#666; }
+                th, td { .fs(16px); .lh(22px); .p(15px,0); .-box; .tc; .-r(#b9b9b9);
+                  &:last-child { .-b; .-r; }
+                }
+              }
+              &.tbl1 {
+                tr {
+                  th { .bgc(#e3e2e2); }
+                  td { .tl; .medium; .pl(25px); .-box; }
+                }
+              }
+              &.tbl3 {
+                tr {
+                  &:nth-child(1) th { .bgc(#e3e2e2); }
+                  &:nth-child(2) th { .light; .bgc(#f2f2f2); }
+                  th { .medium; .bgc(#f2f2f2); }
+                  td { .bgc(#f2f2f2); }
+                }
+              }
+            }
+            p { .ti(-20px); .ml(20px); }
+          }
+        }
+        .sn, .ft { .fs(17px); .lh(29px); .light; .tc; .mt(40px); }
+      }
+    }
+  }
+}
