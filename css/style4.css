@@ -205,9 +205,9 @@ img {
 }
 [mov] {
   opacity: 0;
-  transform: translateY(70px);
+  transform: translateY(0);
   position: relative;
-  transition: opacity 0.7s, transform 0.7s;
+  transition: opacity 1s, transform 1s;
 }
 [mov="in"] {
   opacity: 1;
