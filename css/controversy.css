@@ -1,0 +1,439 @@
+.coll {
+  border-collapse: collapse;
+}
+/*--------------------------------------------------------------------------------------------------------------
+*  Template
+*--------------------------------------------------------------------------------------------------------------*/
+a {
+  display: inline-block;
+  cursor: pointer;
+}
+img {
+  image-rendering: auto;
+  backface-visibility: visible;
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+}
+.container .wrap {
+  font-size: 0px;
+  text-align: center;
+  overflow: hidden;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.container .wrap .bg {
+  max-width: 720px;
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 0px;
+  right: auto;
+  bottom: auto;
+  transform: translateX(-50%);
+}
+.container .wrap .content {
+  width: 100%;
+  z-index: 5;
+  position: relative;
+}
+.container .wrap .content h2 {
+  width: 720px;
+  height: 112px;
+  background-repeat: no-repeat;
+  background-image: url('../img5/h2.png');
+  background-size: contain;
+  position: relative;
+}
+.container .wrap .content .tit {
+  width: 720px;
+  height: 622px;
+  background-repeat: no-repeat;
+  background-image: url('../img5/tit.png');
+  background-size: contain;
+  position: relative;
+  z-index: 1;
+}
+.container .wrap .content .t1 {
+  width: 720px;
+  height: 139px;
+  background-repeat: no-repeat;
+  background-image: url('../img5/t1.png');
+  background-size: contain;
+}
+.container .wrap .content .t2 {
+  width: 720px;
+  height: 124px;
+  background-repeat: no-repeat;
+  background-image: url('../img5/t2.png');
+  background-size: contain;
+}
+.container .wrap .content .gift-wrap img {
+  width: 360px;
+}
+.container .wrap .content .date {
+  position: relative;
+  height: 212px;
+}
+.container .wrap .content .date span {
+  width: 720px;
+  height: 212px;
+  background-repeat: no-repeat;
+  background-image: url('../img5/t3.png');
+  background-size: contain;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+.container .wrap .content .date:after {
+  content: '';
+  display: block;
+  width: 584px;
+  height: 148px;
+  background-color: #d9dbde;
+  border-radius: 15px;
+  opacity: 0.4;
+  position: absolute;
+  left: 50%;
+  top: 0px;
+  right: auto;
+  bottom: auto;
+  margin-left: -292px;
+}
+.container .wrap .content .t4 {
+  width: 720px;
+  height: 64px;
+  background-repeat: no-repeat;
+  background-image: url('../img5/t4.png');
+  background-size: contain;
+}
+.container .wrap .content .part {
+  width: 720px;
+  height: 241px;
+  background-repeat: no-repeat;
+  background-image: url('../img5/btn.png');
+  background-size: contain;
+}
+.container .wrap .content .noti {
+  padding-top: 45px;
+  padding-right: 37px;
+  padding-bottom: 45px;
+  padding-left: 37px;
+  box-sizing: border-box;
+}
+.container .wrap .content .noti p {
+  font-size: 27px;
+  line-height: 35px;
+  text-align: left;
+  letter-spacing: -0.05em;
+  text-indent: -10px;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  word-break: keep-all;
+}
+.container .wrap .content .noti p.i {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+.popup {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: auto;
+  bottom: auto;
+  z-index: 10;
+  display: none;
+}
+.popup .dim {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  right: auto;
+  bottom: auto;
+  background: rgba(0, 0, 0, 0.5);
+}
+.popup .inner {
+  font-size: 0px;
+  background-color: #fff;
+  width: 720px;
+  height: 960px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+.popup .inner .start,
+.popup .inner .end {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: auto;
+  bottom: auto;
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: 1;
+  pointer-events: none;
+}
+.popup .inner .start.act,
+.popup .inner .end.act {
+  opacity: 1;
+}
+.popup .inner .start.act .go,
+.popup .inner .end.act .go {
+  pointer-events: visible;
+}
+.popup .inner .start .go,
+.popup .inner .end .go {
+  width: 480px;
+  height: 128px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  right: auto;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+}
+.popup .inner .step,
+.popup .inner .result {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: background 0.2s;
+}
+.popup .inner .step .next,
+.popup .inner .result .next {
+  width: 340px;
+  height: 90px;
+  position: absolute;
+  left: 50%;
+  bottom: 0px;
+  right: auto;
+  top: auto;
+  margin-left: -170px;
+}
+.popup .inner .pick-wrap {
+  position: absolute;
+  left: 0px;
+  top: 492px;
+  right: auto;
+  bottom: auto;
+}
+.popup .inner .pick-wrap .scales {
+  width: 720px;
+  height: 314px;
+  position: relative;
+}
+.popup .inner .pick-wrap .scales span {
+  display: inline-block;
+  width: 720px;
+  height: 314px;
+  position: absolute;
+  left: 50%;
+  top: 0px;
+  right: auto;
+  bottom: auto;
+  margin-left: -360px;
+  transition: opacity 0.8s;
+}
+.popup .inner .pick-wrap .scales span.level {
+  background-repeat: no-repeat;
+  background-image: url('../img5/scales.png');
+  background-size: contain;
+}
+.popup .inner .pick-wrap .scales span.lev-l {
+  background-repeat: no-repeat;
+  background-image: url('../img5/scales-l.png');
+  background-size: contain;
+}
+.popup .inner .pick-wrap .scales span.lev-r {
+  background-repeat: no-repeat;
+  background-image: url('../img5/scales-r.png');
+  background-size: contain;
+}
+.popup .inner .pick-wrap .btn {
+  width: 164px;
+  height: 76px;
+  position: absolute;
+  left: 50%;
+  bottom: 0px;
+  right: auto;
+  top: auto;
+}
+.popup .inner .pick-wrap .btn.btn1 {
+  background-repeat: no-repeat;
+  background-image: url('../img5/btn1-on.png');
+  background-size: contain;
+  margin-left: -230px;
+}
+.popup .inner .pick-wrap .btn.btn2 {
+  background-repeat: no-repeat;
+  background-image: url('../img5/btn2-on.png');
+  background-size: contain;
+  margin-left: 68px;
+}
+.popup .inner .pick-wrap[data-view='1'] .scales span.level {
+  opacity: 1;
+}
+.popup .inner .pick-wrap[data-view='1'] .scales span.lev-r,
+.popup .inner .pick-wrap[data-view='1'] .scales span.lev-l {
+  opacity: 0;
+}
+.popup .inner .pick-wrap[data-view='2'] .scales span.lev-l {
+  opacity: 1;
+}
+.popup .inner .pick-wrap[data-view='2'] .scales span.lev-r,
+.popup .inner .pick-wrap[data-view='2'] .scales span.level {
+  opacity: 0;
+}
+.popup .inner .pick-wrap[data-view='2'] .btn.btn2 {
+  background-repeat: no-repeat;
+  background-image: url('../img5/btn2-off.png');
+  background-size: contain;
+}
+.popup .inner .pick-wrap[data-view='3'] .scales span.lev-r {
+  opacity: 1;
+}
+.popup .inner .pick-wrap[data-view='3'] .scales span.lev-l,
+.popup .inner .pick-wrap[data-view='3'] .scales span.level {
+  opacity: 0;
+}
+.popup .inner .pick-wrap[data-view='3'] .btn.btn1 {
+  background-repeat: no-repeat;
+  background-image: url('../img5/btn1-off.png');
+  background-size: contain;
+}
+.popup .inner .result {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: auto;
+  bottom: auto;
+  pointer-events: none;
+}
+.popup .inner[data-step='1'] .step {
+  background-repeat: no-repeat;
+  background-image: url('../img5/step1.jpg');
+  background-size: contain;
+}
+.popup .inner[data-step='2'] .step {
+  background-repeat: no-repeat;
+  background-image: url('../img5/step2.jpg');
+  background-size: contain;
+}
+.popup .inner[data-step='3'] .step {
+  background-repeat: no-repeat;
+  background-image: url('../img5/step3.jpg');
+  background-size: contain;
+}
+.popup .inner[data-step='4'] .step {
+  background-repeat: no-repeat;
+  background-image: url('../img5/step4.jpg');
+  background-size: contain;
+}
+.popup .inner[data-step='5'] .step {
+  background-repeat: no-repeat;
+  background-image: url('../img5/step5.jpg');
+  background-size: contain;
+}
+.popup .inner[data-step='6'] .end {
+  opacity: 1;
+  background-repeat: no-repeat;
+  background-image: url('../img5/comp.jpg');
+  background-size: contain;
+}
+.popup .inner[data-step='6'] .end .go {
+  pointer-events: visible;
+}
+.popup .inner[data-step='6'] .step {
+  opacity: 0;
+}
+.popup .inner[data-step='7'] .result {
+  background-repeat: no-repeat;
+  background-image: url('../img5/result1.jpg');
+  background-size: contain;
+  pointer-events: visible;
+}
+.popup .inner[data-step='8'] .result {
+  background-repeat: no-repeat;
+  background-image: url('../img5/result2.jpg');
+  background-size: contain;
+  pointer-events: visible;
+}
+.popup .inner[data-step='9'] .result {
+  background-repeat: no-repeat;
+  background-image: url('../img5/result3.jpg');
+  background-size: contain;
+  pointer-events: visible;
+}
+.popup .inner[data-step='10'] .result {
+  background-repeat: no-repeat;
+  background-image: url('../img5/result4.jpg');
+  background-size: contain;
+  pointer-events: visible;
+}
+.popup .inner[data-step='11'] .result {
+  background-repeat: no-repeat;
+  background-image: url('../img5/result5.jpg');
+  background-size: contain;
+  pointer-events: visible;
+}
+.popup.on {
+  display: inline-block;
+}
+[mov] {
+  opacity: 0;
+  transform: translateY(50px);
+  position: relative;
+  transition: opacity 1s, transform 1s;
+}
+[mov="in"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+[mov="in"][data-delay="1"] {
+  transition-delay: 0.1s;
+}
+[mov="in"][data-delay="2"] {
+  transition-delay: 0.2s;
+}
+[mov="in"][data-delay="3"] {
+  transition-delay: 0.3s;
+}
+[mov="in"][data-delay="4"] {
+  transition-delay: 0.4s;
+}
+[mov="in"][data-delay="5"] {
+  transition-delay: 0.5s;
+}
+[mov="in"][data-delay="6"] {
+  transition-delay: 0.6s;
+}
+[mov="in"][data-delay="7"] {
+  transition-delay: 0.7s;
+}
+[mov="in"][data-delay="8"] {
+  transition-delay: 0.8s;
+}
+[mov="in"][data-delay="9"] {
+  transition-delay: 0.9s;
+}
+[mov="in"][data-delay="10"] {
+  transition-delay: 1s;
+}
+[mov="in"][data-delay="11"] {
+  transition-delay: 1.1s;
+}
+[mov="in"][data-delay="12"] {
+  transition-delay: 1.2s;
+}
+/*# sourceMappingURL=controversy.css.map */

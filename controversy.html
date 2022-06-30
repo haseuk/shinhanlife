@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=720px">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/font.css">
+  <link rel="stylesheet" href="css/controversy.css">
+  <script src="https://shinhanlife.ethan-alice.com/js/jquery.min.js"></script>
+  <title>신한라이프 논쟁종결</title>
+</head>
+<body>
+  <div class="container">
+    <div class="wrap">
+      <div class="bg"><img src="img5/bg.jpg" alt=""></div>
+      <div class="content">
+        <h2 mov>이 구역의 논쟁을 끝내러 왔다</h2>
+        <p class="tit" mov data-delay="2">논쟁 종결</p>
+        <p class="t1" mov data-delay="3">대한민국을 뜨겁게 달군 논쟁 시리즈들!</p>
+        <p class="t2" mov data-delay="4">길고 긴 논쟁의 끝맺음을 위하여 논쟁 종결 EVENT에 참여하세요!</p>
+        <div class="gift-wrap">
+          <img src="img5/g1.png" alt="" class="g1" mov data-delay="5">
+          <img src="img5/g2.png" alt="" class="g2" mov data-delay="5">
+          <img src="img5/g3.png" alt="" class="g3" mov data-delay="5">
+          <img src="img5/g4.png" alt="" class="g4" mov data-delay="5">
+        </div>
+        <div class="date" mov>
+          <span>
+          이벤트 일정 : 07.18 ~ 07.31
+          당첨자 발표 : 08.10
+            </span>
+        </div>
+        <p class="t4" mov>* 투표 참여 시, 자동으로 이벤트 응모되며, 당첨자에 한해 개별 안내됩니다.</p>
+        <a class="part" mov>투표하러 가기</a>
+        <div class="noti">
+          <p class="i">이벤트 유의사항</p>
+          <p>. 동일한 휴대폰 번호로 중복 응모 불가</p>
+          <p>. 당첨 시, 기프티콘 등 경품 지급은 마케팅 동의 개인정보 상의 휴대폰 번호로 발송되며, 마케팅 미동의 시 이벤트 참여가 불가합니다.</p>
+          <p>. 잘못된 개인정보 오기입으로 모든 경품의 오발송,반송/분실될 경우 재발송 되지 않습니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup">
+    <div class="dim"></div>
+    <div class="inner" data-step="1">
+      <!-- 투표가기-->
+      <div class="start act">
+        <img src="img5/start.jpg" alt="">
+        <a class="go">투표하러 가기</a>
+      </div>
+      <!-- 된다안된다-->
+      <div class="step step1">
+        <a class="next">다음 질문 넘어가기</a>
+      </div>
+      <div class="pick-wrap" data-view="1">
+        <div class="scales">
+          <span class="level"></span>
+          <span class="lev-l"></span>
+          <span class="lev-r"></span>
+        </div>
+        <div class="btn btn1" data-sel="2">된다</div>
+        <div class="btn btn2" data-sel="3">안된다</div>
+      </div>
+      <!-- 결과가기-->
+      <div class="end">
+        <a class="go">결과 보러가기</a>
+      </div>
+      <!-- 논쟁결과-->
+      <div class="result">
+        <a class="next">다음 결과보기</a>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(document).ready(function() {
+      setTimeout(function () {
+        $('.ready').removeClass('ready');
+      }, 500)
+      var mov = document.querySelectorAll('[mov]');
+
+      function movCheck() {
+        var bottom = window.innerHeight;
+        var i = mov.length;
+        var r;
+        while (i--) {
+          r = mov[i].getBoundingClientRect();
+          if (r.top < bottom) mov[i].setAttribute('mov', 'in')
+        }
+      }
+
+      window.addEventListener('scroll', movCheck);
+      window.addEventListener('resize', movCheck);
+      movCheck();
+
+      let part = document.querySelector('.part');
+      let popup = document.querySelector('.popup');
+      let popupInner = document.querySelector('.popup .inner');
+      part.addEventListener('click', function () {
+        popup.classList.add('on');
+        let scrollTop = window.scrollY || document.documentElement.scrollTop;
+        let h = popupInner.getBoundingClientRect().height;
+        let mt = window.innerHeight - h;
+        popupInner.style.top = scrollTop +'px';
+        if(h > window.innerHeight) {
+          popupInner.style.marginTop = 30 + 'px';
+        } else {
+          popupInner.style.marginTop = mt/2 +'px';
+        }
+      });
+
+      let goStart = document.querySelector('.start .go');
+      let start = document.querySelector('.start');
+      goStart.addEventListener('click', function () {
+        start.classList.remove('act');
+      });
+      let step = 1;
+      let pick = '';
+      let pickWrap = document.querySelector('.pick-wrap');
+      let btns = document.querySelectorAll('.pick-wrap .btn');
+      Array.prototype.forEach.call(btns, function (e) {
+        e.addEventListener('click', function () {
+          pick = 'ok';
+          let idx = e.getAttribute('data-sel');
+          pickWrap.setAttribute('data-view', idx);
+        })
+      });
+
+      let inner = document.querySelector('.inner');
+      let sNext = document.querySelector('.step .next');
+      sNext.addEventListener('click', function () {
+        if (!pick) {
+          alert('논쟁을 읽고 선택해주세요.');
+        } else {
+          nextStep();
+          pick = '';
+          pickWrap.setAttribute('data-view', '1');
+        }
+      });
+
+      function nextStep() {
+        step += 1;
+        inner.setAttribute('data-step', step);
+      }
+
+      let goResult = document.querySelector('.end .go');
+      goResult.addEventListener('click', function () {
+        nextStep();
+      });
+
+      let rNext = document.querySelector('.result .next');
+      rNext.addEventListener('click', function () {
+        if (step === 11) {
+          popup.classList.remove('on');
+          step = 1;
+          inner.setAttribute('data-step', step);
+          pick = '';
+        } else nextStep();
+      })
+    });
+  </script>
+</body>
+</html>
