@@ -16,14 +16,14 @@
       <div class="bg"><img src="img5/bg.jpg" alt=""></div>
       <div class="content">
         <h2 mov>이 구역의 논쟁을 끝내러 왔다</h2>
-        <p class="tit" mov data-delay="2">논쟁 종결</p>
-        <p class="t1" mov data-delay="3">대한민국을 뜨겁게 달군 논쟁 시리즈들!</p>
-        <p class="t2" mov data-delay="4">길고 긴 논쟁의 끝맺음을 위하여 논쟁 종결 EVENT에 참여하세요!</p>
+        <p class="tit" mov>논쟁 종결</p>
+        <p class="t1" mov>대한민국을 뜨겁게 달군 논쟁 시리즈들!</p>
+        <p class="t2" mov>길고 긴 논쟁의 끝맺음을 위하여 논쟁 종결 EVENT에 참여하세요!</p>
         <div class="gift-wrap">
-          <img src="img5/g1.png" alt="" class="g1" mov data-delay="5">
-          <img src="img5/g2.png" alt="" class="g2" mov data-delay="5">
-          <img src="img5/g3.png" alt="" class="g3" mov data-delay="5">
-          <img src="img5/g4.png" alt="" class="g4" mov data-delay="5">
+          <img src="img5/g1.png" alt="" class="g1" mov>
+          <img src="img5/g2.png" alt="" class="g2" mov>
+          <img src="img5/g3.png" alt="" class="g3" mov>
+          <img src="img5/g4.png" alt="" class="g4" mov>
         </div>
         <div class="date" mov>
           <span>
@@ -31,14 +31,24 @@
           당첨자 발표 : 08.10
             </span>
         </div>
+
         <p class="t4" mov>* 투표 참여 시, 자동으로 이벤트 응모되며, 당첨자에 한해 개별 안내됩니다.</p>
         <a class="part" mov>투표하러 가기</a>
+
+
+        <!--7.4 수정-->
         <div class="noti">
           <p class="i">이벤트 유의사항</p>
-          <p>. 동일한 휴대폰 번호로 중복 응모 불가</p>
-          <p>. 당첨 시, 기프티콘 등 경품 지급은 마케팅 동의 개인정보 상의 휴대폰 번호로 발송되며, 마케팅 미동의 시 이벤트 참여가 불가합니다.</p>
-          <p>. 잘못된 개인정보 오기입으로 모든 경품의 오발송,반송/분실될 경우 재발송 되지 않습니다.</p>
+          <p>&#183; 본 이벤트 기간 내 추첨을 통해 이벤트 당첨자를 선정합니다.</p>
+          <p>&#183; 경품은 제휴처 사정에 따라 변경 될 수 있으며, 제세공과금은 신한라이프가 부담 합니다.</p>
+          <p>&#183; 당첨 경품 배송은 이벤트 종료 후 14일 이내 발송 됩니다.</p>
+          <p>&#183; 투표 참여 시 자동으로 이벤트 응모되며, 당첨자에 한해 개별 안내됩니다.</p>
+          <p>&#183; 기프티콘은 일부 매장에서 사용이 불가하며 유효기간의 연장/환불은 불가합니다.</p>
         </div>
+        <!-- 끝-->
+
+
+
       </div>
     </div>
   </div>
@@ -68,10 +78,29 @@
       <div class="end">
         <a class="go">결과 보러가기</a>
       </div>
+
+
+
+
+
+
+      <!-- 7.4 수정-->
       <!-- 논쟁결과-->
-      <div class="result">
+      <!-- result클래스에 n-done이면 안된다-->
+      <!-- result클래스에 done이면 된다-->
+      <!-- result클래스에 half이면 동점-->
+      <div class="result half">
+        <div class="result-tit">
+          <p class="res">안된다</p>
+          <span>된다 <i>10%</i></span>
+          <span>안된다 <i>90%</i></span>
+        </div>
+        <div class="scales">
+          <span></span>
+        </div>
         <a class="next">다음 결과보기</a>
       </div>
+      <a class="close">닫기</a>
     </div>
   </div>
   <script>
@@ -98,8 +127,17 @@
       let part = document.querySelector('.part');
       let popup = document.querySelector('.popup');
       let popupInner = document.querySelector('.popup .inner');
-      part.addEventListener('click', function () {
+      function popupOn() {
         popup.classList.add('on');
+        document.body.style.position = 'fixed';
+      }
+      function popupOff() {
+        popup.classList.remove('on');
+        document.body.style.position = '';
+      }
+
+      part.addEventListener('click', function () {
+        popupOn();
         let scrollTop = window.scrollY || document.documentElement.scrollTop;
         let h = popupInner.getBoundingClientRect().height;
         let mt = window.innerHeight - h;
@@ -153,13 +191,26 @@
       let rNext = document.querySelector('.result .next');
       rNext.addEventListener('click', function () {
         if (step === 11) {
-          popup.classList.remove('on');
+          popupOff();
           step = 1;
           inner.setAttribute('data-step', step);
           pick = '';
+          start.classList.add('act');
         } else nextStep();
-      })
+      });
+
+      let close = document.querySelector('.close');
+      close.addEventListener('click', function() {
+        popupOff();
+        start.classList.add('act');
+      });
     });
   </script>
+  <!-- 끝-->
+
+
+
+
+
 </body>
 </html>

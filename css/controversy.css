@@ -4,6 +4,44 @@
 /*--------------------------------------------------------------------------------------------------------------
 *  Template
 *--------------------------------------------------------------------------------------------------------------*/
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/notosanskr/v27/Pby7FmXiEBPT4ITbgNA5CgmOelzI7g.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/notosanskr/v27/PbykFmXiEBPT4ITbgNA5Cgm20A.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/notosanskr/v27/Pby7FmXiEBPT4ITbgNA5CgmOIl3I7g.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/notosanskr/v27/Pby7FmXiEBPT4ITbgNA5CgmOalvI7g.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/notosanskr/v27/Pby7FmXiEBPT4ITbgNA5CgmOUlnI7g.otf) format('opentype');
+}
+html {
+  font-family: 'Noto Sans KR', sans-serif;
+}
 a {
   display: inline-block;
   cursor: pointer;
@@ -121,6 +159,23 @@ img {
   padding-bottom: 45px;
   padding-left: 37px;
   box-sizing: border-box;
+  background-color: #dfdfdf;
+  margin-bottom: 62px;
+  position: relative;
+}
+.container .wrap .content .noti:after {
+  content: '';
+  display: block;
+  width: 720px;
+  height: 62px;
+  background-repeat: no-repeat;
+  background-image: url('../img5/ft-logo.jpg');
+  background-size: contain;
+  position: absolute;
+  left: 0px;
+  bottom: -62px;
+  right: auto;
+  top: auto;
 }
 .container .wrap .content .noti p {
   font-size: 27px;
@@ -169,6 +224,19 @@ img {
   left: 50%;
   transform: translateX(-50%);
   z-index: 5;
+  overflow: hidden;
+}
+.popup .inner .close {
+  width: 59px;
+  height: 59px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  left: auto;
+  bottom: auto;
+  background-repeat: no-repeat;
+  background-image: url('../img5/close.png');
+  background-size: contain;
 }
 .popup .inner .start,
 .popup .inner .end {
@@ -208,7 +276,7 @@ img {
   width: 100%;
   height: 100%;
   position: relative;
-  transition: background 0.2s;
+  transition: all 0.3s;
 }
 .popup .inner .step .next,
 .popup .inner .result .next {
@@ -313,12 +381,70 @@ img {
   background-size: contain;
 }
 .popup .inner .result {
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  right: auto;
-  bottom: auto;
-  pointer-events: none;
+  padding-top: 240px;
+  box-sizing: border-box;
+}
+.popup .inner .result .result-tit {
+  text-align: center;
+}
+.popup .inner .result .result-tit .res {
+  margin-bottom: 5px;
+}
+.popup .inner .result .result-tit .res:after {
+  content: '';
+  display: block;
+  font-size: 65px;
+  line-height: 80px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+.popup .inner .result .result-tit span {
+  font-size: 28px;
+  line-height: 35px;
+  display: inline-block;
+  letter-spacing: -0.025em;
+  margin-top: 0px;
+  margin-right: 15px;
+  margin-bottom: 0px;
+  margin-left: 15px;
+  font-weight: 700;
+}
+.popup .inner .result .scales {
+  margin-top: 110px;
+}
+.popup .inner .result .scales span {
+  width: 720px;
+  height: 315px;
+  display: inline-block;
+}
+.popup .inner .result.n-done .result-tit .res:after {
+  content: '안된다';
+}
+.popup .inner .result.n-done .scales span {
+  background-repeat: no-repeat;
+  background-image: url('../img5/n-done.png');
+  background-size: contain;
+}
+.popup .inner .result.done .result-tit .res:after {
+  content: '된다';
+}
+.popup .inner .result.done .scales span {
+  background-repeat: no-repeat;
+  background-image: url('../img5/done.png');
+  background-size: contain;
+}
+.popup .inner .result.half .result-tit .res:after {
+  content: '동점';
+}
+.popup .inner .result.half .scales span {
+  background-repeat: no-repeat;
+  background-image: url('../img5/half.png');
+  background-size: contain;
+}
+.popup .inner .end {
+  position: relative;
+  left: auto;
+  top: auto;
 }
 .popup .inner[data-step='1'] .step {
   background-repeat: no-repeat;
@@ -345,6 +471,10 @@ img {
   background-image: url('../img5/step5.jpg');
   background-size: contain;
 }
+.popup .inner[data-step='6'] .start,
+.popup .inner[data-step='6'] .step {
+  display: none;
+}
 .popup .inner[data-step='6'] .end {
   opacity: 1;
   background-repeat: no-repeat;
@@ -354,8 +484,23 @@ img {
 .popup .inner[data-step='6'] .end .go {
   pointer-events: visible;
 }
-.popup .inner[data-step='6'] .step {
-  opacity: 0;
+.popup .inner[data-step='6'] .result {
+  display: none;
+}
+.popup .inner[data-step='7'] .step,
+.popup .inner[data-step='8'] .step,
+.popup .inner[data-step='9'] .step,
+.popup .inner[data-step='10'] .step,
+.popup .inner[data-step='11'] .step,
+.popup .inner[data-step='7'] .end,
+.popup .inner[data-step='8'] .end,
+.popup .inner[data-step='9'] .end,
+.popup .inner[data-step='10'] .end,
+.popup .inner[data-step='11'] .end {
+  display: none;
+}
+.popup .inner .result {
+  pointer-events: none;
 }
 .popup .inner[data-step='7'] .result {
   background-repeat: no-repeat;

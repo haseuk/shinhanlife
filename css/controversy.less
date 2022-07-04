@@ -1,5 +1,7 @@
 @import "asset";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
 
+html { font-family:'Noto Sans KR', sans-serif; }
 a { .ib; .pointer; }
 img { image-rendering: auto; backface-visibility: visible; .ib; .vat; .wf; }
 
@@ -20,7 +22,8 @@ img { image-rendering: auto; backface-visibility: visible; .ib; .vat; .wf; }
       }
       .t4 { .wh(720,64); .contain('../img5/t4.png'); }
       .part { .wh(720,241); .contain('../img5/btn.png'); }
-      .noti { .p(45,37); .-box;
+      .noti { .p(45,37); .-box; .bgc(#dfdfdf); .mb(62); .rel;
+        &:after { .cnt; .wh(720,62); .contain('../img5/ft-logo.jpg'); .abs; .lb(0,-62); }
         p { .fs(27); .lh(35); .tl; .ls(-0.05em); .ti(-10); .m(0,0,10,10); .keep-all();
           &.i { .fs(30); .bold; .mb(30); }
         }
@@ -31,14 +34,15 @@ img { image-rendering: auto; backface-visibility: visible; .ib; .vat; .wf; }
 
 .popup { .f; .abs; .lt; z-index: 10; .hide;
   .dim { .f; .fix; .lt; background: rgba(0,0,0,0.5); }
-  .inner { .fs(0); .bgc(#fff); .wh(720,960); .abs; .l(50%); transform: translateX(-50%); z-index: 5;
+  .inner { .fs(0); .bgc(#fff); .wh(720,960); .abs; .l(50%); transform: translateX(-50%); z-index: 5; overflow:hidden;
+    .close { .wh(59,59); .abs; .rt; .contain('../img5/close.png'); }
     .start, .end { .f; .abs; .lt; opacity: 0; transition: opacity 0.2s; z-index: 1; pointer-events: none;
       &.act { opacity: 1;
         .go { pointer-events: visible; }
       }
       .go { .wh(480,128); .abs; .lt(50%,50%); transform: translate(-50%,-50%);}
     }
-    .step, .result { .f; .rel; transition: background 0.2s;
+    .step, .result { .f; .rel; transition: all 0.3s;
       .next { .wh(340,90); .abs; .lb(50%,0); .ml(-170); }
     }
     .pick-wrap { .abs; .lt(0,492);
@@ -75,18 +79,50 @@ img { image-rendering: auto; backface-visibility: visible; .ib; .vat; .wf; }
         .btn.btn1 { .contain('../img5/btn1-off.png'); }
       }
     }
-    .result { .abs; .lt; pointer-events: none; }
+    .result { .pt(240); .-box;
+      .result-tit { .tc;
+        .res { .mb(5);
+          &:after { .cnt; .fs(65); .lh(80); .bold; .ls(-0.025em); }
+        }
+        span { .fs(28); .lh(35); .ib; .ls(-0.025em); .m(0,15); .bold; }
+      }
+      .scales { .mt(110);
+        span { .wh(720,315); .ib; }
+      }
+      &.n-done {
+        .result-tit .res:after { content: '안된다'; }
+        .scales span { .contain('../img5/n-done.png'); }
+      }
+      &.done {
+        .result-tit .res:after { content: '된다'; }
+        .scales span { .contain('../img5/done.png'); }
+      }
+      &.half {
+        .result-tit .res:after { content: '동점'; }
+        .scales span { .contain('../img5/half.png'); }
+      }
+    }
+    .end { .rel; left:auto; top:auto; }
     &[data-step='1'] .step { .contain('../img5/step1.jpg'); }
     &[data-step='2'] .step { .contain('../img5/step2.jpg'); }
     &[data-step='3'] .step { .contain('../img5/step3.jpg'); }
     &[data-step='4'] .step { .contain('../img5/step4.jpg'); }
     &[data-step='5'] .step { .contain('../img5/step5.jpg'); }
     &[data-step='6'] {
+      .start, .step { .hide; }
       .end { opacity: 1; .contain('../img5/comp.jpg');
         .go { pointer-events: visible; }
       }
-      .step { opacity: 0; }
+      .result { .hide; }
     }
+    &[data-step='7'],
+    &[data-step='8'],
+    &[data-step='9'],
+    &[data-step='10'],
+    &[data-step='11'] {
+      .step, .end { .hide; }
+    }
+    .result { pointer-events: none; }
     &[data-step='7'] .result { .contain('../img5/result1.jpg'); pointer-events: visible; }
     &[data-step='8'] .result { .contain('../img5/result2.jpg'); pointer-events: visible; }
     &[data-step='9'] .result { .contain('../img5/result3.jpg'); pointer-events: visible; }
