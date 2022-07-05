@@ -40,11 +40,12 @@
         <div class="noti">
           <p class="i">이벤트 유의사항</p>
           <p>&#183; 본 이벤트 기간 내 추첨을 통해 이벤트 당첨자를 선정합니다.</p>
-          <p>&#183; 경품은 제휴처 사정에 따라 변경 될 수 있으며, 제세공과금은 신한라이프가 부담 합니다.</p>
-          <p>&#183; 당첨 경품 배송은 이벤트 종료 후 14일 이내 발송 됩니다.</p>
+          <p>&#183; 경품은 제휴처 사정에 따라 변경 될 수 있으며, 제세공과금은 신한라이프가 부담합니다.</p>
+          <p>&#183; 당첨 경품 배송은 이벤트 종료 후 5일 이내 발송 됩니다.</p>
           <p>&#183; 투표 참여 시 자동으로 이벤트 응모되며, 당첨자에 한해 개별 안내됩니다.</p>
           <p>&#183; 기프티콘은 일부 매장에서 사용이 불가하며 유효기간의 연장/환불은 불가합니다.</p>
         </div>
+
         <!-- 끝-->
 
 
@@ -56,11 +57,18 @@
   <div class="popup">
     <div class="dim"></div>
     <div class="inner" data-step="1">
+
+      <!-- 7.5 수정-->
+
       <!-- 투표가기-->
-      <div class="start act">
-        <img src="img5/start.jpg" alt="">
-        <a class="go">투표하러 가기</a>
-      </div>
+<!--      <div class="start act">-->
+<!--        <img src="img5/start.jpg" alt="">-->
+<!--        <a class="go">투표하러 가기</a>-->
+<!--      </div>-->
+      <!-- 7.5 끝-->
+
+
+
       <!-- 된다안된다-->
       <div class="step step1">
         <a class="next">다음 질문 넘어가기</a>
@@ -103,6 +111,13 @@
       <a class="close">닫기</a>
     </div>
   </div>
+
+
+
+
+
+
+  <!-- 7.5 수정-->
   <script>
     $(document).ready(function() {
       setTimeout(function () {
@@ -129,11 +144,11 @@
       let popupInner = document.querySelector('.popup .inner');
       function popupOn() {
         popup.classList.add('on');
-        document.body.style.position = 'fixed';
+        // document.body.style.position = 'fixed';
       }
       function popupOff() {
         popup.classList.remove('on');
-        document.body.style.position = '';
+        // document.body.style.position = '';
       }
 
       part.addEventListener('click', function () {
@@ -149,11 +164,11 @@
         }
       });
 
-      let goStart = document.querySelector('.start .go');
-      let start = document.querySelector('.start');
-      goStart.addEventListener('click', function () {
-        start.classList.remove('act');
-      });
+      // let goStart = document.querySelector('.start .go');
+      // let start = document.querySelector('.start');
+      // goStart.addEventListener('click', function () {
+      //   start.classList.remove('act');
+      // });
       let step = 1;
       let pick = '';
       let pickWrap = document.querySelector('.pick-wrap');
@@ -192,21 +207,28 @@
       rNext.addEventListener('click', function () {
         if (step === 11) {
           popupOff();
-          step = 1;
-          inner.setAttribute('data-step', step);
-          pick = '';
-          start.classList.add('act');
+          re();
+          // start.classList.add('act');
         } else nextStep();
       });
 
       let close = document.querySelector('.close');
       close.addEventListener('click', function() {
         popupOff();
-        start.classList.add('act');
+        re();
+        // start.classList.add('act');
       });
+
+
+      //중간에 닫을경우 처음부터 실행
+      function re() {
+        step = 1;
+        inner.setAttribute('data-step', step);
+        pick = '';
+      }
     });
   </script>
-  <!-- 끝-->
+  <!-- 7.5 끝-->
 
 
 
