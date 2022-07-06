@@ -280,14 +280,13 @@ img {
 }
 .popup .inner .step .next,
 .popup .inner .result .next {
-  width: 340px;
-  height: 90px;
+  width: 100%;
+  height: 119px;
   position: absolute;
-  left: 50%;
+  left: 0px;
   bottom: 0px;
   right: auto;
   top: auto;
-  margin-left: -170px;
 }
 .popup .inner .pick-wrap {
   position: absolute;
@@ -504,33 +503,78 @@ img {
 }
 .popup .inner[data-step='7'] .result {
   background-repeat: no-repeat;
-  background-image: url('../img5/result1.jpg');
+  background-image: url('../img5/result.jpg');
   background-size: contain;
   pointer-events: visible;
 }
-.popup .inner[data-step='8'] .result {
-  background-repeat: no-repeat;
-  background-image: url('../img5/result2.jpg');
-  background-size: contain;
-  pointer-events: visible;
+.popup .inner .result .re-box {
+  padding-top: 87px;
+  padding-right: 50px;
+  padding-bottom: 0px;
+  padding-left: 50px;
+  box-sizing: border-box;
 }
-.popup .inner[data-step='9'] .result {
-  background-repeat: no-repeat;
-  background-image: url('../img5/result3.jpg');
-  background-size: contain;
-  pointer-events: visible;
+.popup .inner .result .re-box .value {
+  zoom: 1;
 }
-.popup .inner[data-step='10'] .result {
-  background-repeat: no-repeat;
-  background-image: url('../img5/result4.jpg');
-  background-size: contain;
-  pointer-events: visible;
+.popup .inner .result .re-box .value:after {
+  content: '';
+  display: block;
+  clear: both;
+  font-size: 0;
+  height: 0;
+  visibility: hidden;
 }
-.popup .inner[data-step='11'] .result {
-  background-repeat: no-repeat;
-  background-image: url('../img5/result5.jpg');
-  background-size: contain;
-  pointer-events: visible;
+.popup .inner .result .re-box .value p {
+  font-size: 28px;
+  letter-spacing: -0.025em;
+  line-height: 34px;
+  font-weight: 700;
+  color: #a3700b;
+  display: inline-block;
+  vertical-align: top;
+}
+.popup .inner .result .re-box .value p.d-txt {
+  color: #112778;
+}
+.popup .inner .result .re-box .value p.n-txt {
+  float: right;
+}
+.popup .inner .result .re-box .bar {
+  width: 100%;
+  height: 15px;
+  background-color: #d7991e;
+  position: relative;
+}
+.popup .inner .result .re-box .bar .done {
+  display: inline-block;
+  height: 15px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: auto;
+  bottom: auto;
+  background-color: #112778;
+  z-index: 1;
+}
+.popup .inner .result .re-box.re3,
+.popup .inner .result .re-box.re4,
+.popup .inner .result .re-box.re5 {
+  padding-top: 80px;
+}
+.popup .inner .result .comp {
+  width: 100%;
+  height: 120px;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  right: auto;
+  top: auto;
+  display: inline-block;
+  z-index: 1;
+}
+.popup .inner[data-step='7'] {
+  height: 1078px;
 }
 .popup.on {
   display: inline-block;

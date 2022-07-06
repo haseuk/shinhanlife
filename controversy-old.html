@@ -28,11 +28,15 @@
         <div class="date" mov>
           <span>
           이벤트 일정 : 07.18 ~ 07.31
-          당첨자 발표 : 08.5
+          당첨자 발표 : 08.10
             </span>
         </div>
-        <p class="t4" mov>* 투표 참여 시, 자동으로 이벤트 응모되며 당첨자에 한해 개별 안내됩니다.</p>
+
+        <p class="t4" mov>* 투표 참여 시, 자동으로 이벤트 응모되며, 당첨자에 한해 개별 안내됩니다.</p>
         <a class="part" mov>투표하러 가기</a>
+
+
+        <!--7.4 수정-->
         <div class="noti">
           <p class="i">이벤트 유의사항</p>
           <p>&#183; 본 이벤트 기간 내 추첨을 통해 이벤트 당첨자를 선정합니다.</p>
@@ -41,6 +45,11 @@
           <p>&#183; 투표 참여 시 자동으로 이벤트 응모되며, 당첨자에 한해 개별 안내됩니다.</p>
           <p>&#183; 기프티콘은 일부 매장에서 사용이 불가하며 유효기간의 연장/환불은 불가합니다.</p>
         </div>
+
+        <!-- 끝-->
+
+
+
       </div>
     </div>
   </div>
@@ -48,6 +57,17 @@
   <div class="popup">
     <div class="dim"></div>
     <div class="inner" data-step="1">
+
+      <!-- 7.5 수정-->
+
+      <!-- 투표가기-->
+<!--      <div class="start act">-->
+<!--        <img src="img5/start.jpg" alt="">-->
+<!--        <a class="go">투표하러 가기</a>-->
+<!--      </div>-->
+      <!-- 7.5 끝-->
+
+
 
       <!-- 된다안된다-->
       <div class="step step1">
@@ -72,62 +92,21 @@
 
 
 
-
-      <!-- ######################7.6 수정-->
+      <!-- 7.4 수정-->
       <!-- 논쟁결과-->
-      <div class="result">
-        <!-- 핫도그-->
-        <div class="re-box re1">
-          <div class="value">
-            <p class="d-txt">85%</p>
-            <p class="n-txt">15%</p>
-          </div>
-          <div class="bar">
-            <!-- 아래 span tag에 width 값으로 "된다" 길이만 변경됩니다.-->
-            <span class="done" style="width:85%;"></span>
-          </div>
+      <!-- result클래스에 n-done이면 안된다-->
+      <!-- result클래스에 done이면 된다-->
+      <!-- result클래스에 half이면 동점-->
+      <div class="result half">
+        <div class="result-tit">
+          <p class="res">안된다</p>
+          <span>된다 <i>10%</i></span>
+          <span>안된다 <i>90%</i></span>
         </div>
-        <!-- 마스크-->
-        <div class="re-box re2">
-          <div class="value">
-            <p class="d-txt">40%</p>
-            <p class="n-txt">60%</p>
-          </div>
-          <div class="bar">
-            <span class="done" style="width:40%;"></span>
-          </div>
+        <div class="scales">
+          <span></span>
         </div>
-        <!-- 외투-->
-        <div class="re-box re3">
-          <div class="value">
-            <p class="d-txt">15%</p>
-            <p class="n-txt">75%</p>
-          </div>
-          <div class="bar">
-            <span class="done" style="width:15%;"></span>
-          </div>
-        </div>
-        <!-- 1박2일-->
-        <div class="re-box re4">
-          <div class="value">
-            <p class="d-txt">65%</p>
-            <p class="n-txt">35%</p>
-          </div>
-          <div class="bar">
-            <span class="done" style="width:65%;"></span>
-          </div>
-        </div>
-        <!-- 술자리-->
-        <div class="re-box re5">
-          <div class="value">
-            <p class="d-txt">85%</p>
-            <p class="n-txt">15%</p>
-          </div>
-          <div class="bar">
-            <span class="done" style="width:85%;"></span>
-          </div>
-        </div>
-        <a class="comp">참여 완료</a>
+        <a class="next">다음 결과보기</a>
       </div>
       <a class="close">닫기</a>
     </div>
@@ -135,6 +114,10 @@
 
 
 
+
+
+
+  <!-- 7.5 수정-->
   <script>
     $(document).ready(function() {
       setTimeout(function () {
@@ -220,14 +203,14 @@
         nextStep();
       });
 
-      // let rNext = document.querySelector('.result .next');
-      // rNext.addEventListener('click', function () {
-      //   if (step === 11) {
-      //     popupOff();
-      //     re();
-      //     start.classList.add('act');
-      //   } else nextStep();
-      // });
+      let rNext = document.querySelector('.result .next');
+      rNext.addEventListener('click', function () {
+        if (step === 11) {
+          popupOff();
+          re();
+          // start.classList.add('act');
+        } else nextStep();
+      });
 
       let close = document.querySelector('.close');
       close.addEventListener('click', function() {
@@ -243,15 +226,9 @@
         inner.setAttribute('data-step', step);
         pick = '';
       }
-
-      let comp = document.querySelector('.comp');
-      comp.addEventListener('click', function() {
-        popupOff();
-        re();
-      })
     });
   </script>
-  <!-- ######################7.6 수정 끝-->
+  <!-- 7.5 끝-->
 
 
 

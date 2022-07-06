@@ -43,7 +43,7 @@ img { image-rendering: auto; backface-visibility: visible; .ib; .vat; .wf; }
       .go { .wh(480,128); .abs; .lt(50%,50%); transform: translate(-50%,-50%);}
     }
     .step, .result { .f; .rel; transition: all 0.3s;
-      .next { .wh(340,90); .abs; .lb(50%,0); .ml(-170); }
+      .next { .wh(100%,119); .abs; .lb; }
     }
     .pick-wrap { .abs; .lt(0,492);
       .scales { .wh(720,314); .rel;
@@ -123,11 +123,28 @@ img { image-rendering: auto; backface-visibility: visible; .ib; .vat; .wf; }
       .step, .end { .hide; }
     }
     .result { pointer-events: none; }
-    &[data-step='7'] .result { .contain('../img5/result1.jpg'); pointer-events: visible; }
-    &[data-step='8'] .result { .contain('../img5/result2.jpg'); pointer-events: visible; }
-    &[data-step='9'] .result { .contain('../img5/result3.jpg'); pointer-events: visible; }
-    &[data-step='10'] .result { .contain('../img5/result4.jpg'); pointer-events: visible; }
-    &[data-step='11'] .result { .contain('../img5/result5.jpg'); pointer-events: visible; }
+    &[data-step='7'] .result { .contain('../img5/result.jpg'); pointer-events: visible; }
+    //&[data-step='8'] .result { .contain('../img5/result2.jpg'); pointer-events: visible; }
+    //&[data-step='9'] .result { .contain('../img5/result3.jpg'); pointer-events: visible; }
+    //&[data-step='10'] .result { .contain('../img5/result4.jpg'); pointer-events: visible; }
+    //&[data-step='11'] .result { .contain('../img5/result5.jpg'); pointer-events: visible; }
+
+    .result {
+      .re-box { .p(87,50,0); .-box;
+        .value { .clear;
+          p { .fs(28); .ls(-0.025em); .lh(34); .bold; color:#a3700b; .ib; .vat;
+            &.d-txt { color:#112778; }
+            &.n-txt { .fr; }
+          }
+        }
+        .bar { .wh(100%,15); .bgc(#d7991e); .rel;
+          .done { .ib; .h(15); .abs; .lt; .bgc(#112778); z-index: 1; }
+        }
+        &.re3, &.re4, &.re5{ .pt(80); }
+      }
+      .comp { .wh(100%,120); .abs; .lb; .ib; z-index:1;  }
+    }
+    &[data-step='7'] { .h(1078); }
   }
   &.on { .ib; }
 }
